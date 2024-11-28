@@ -95,6 +95,16 @@ class LinkedList {
             previousNode.nextNode = newNode
         }
     }
+
+    removeAt(index) {
+        let list = this.linkedList;
+        list.splice(index, 1);
+
+        if (typeof list[index - 1] !== "undefined") {
+          const previousNode = list[index - 1];
+          previousNode.nextNode = list[index];
+        }
+    }
 }
 
 class Node {
@@ -111,5 +121,6 @@ list.append('watermelon')
 list.prepend('alister')
 list.append('great')
 list.insertAt('walter', 2)
+list.removeAt(2)
 console.log(list.linkedList);
 console.log(list.toString());
