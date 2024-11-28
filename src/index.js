@@ -54,10 +54,33 @@ class LinkedList {
         }
         return boolean
     }
-}
 
-LinkedList.prototype.toString = function linkedListToString() {
+    find(value) {
+        let list = this.linkedList;
+        let container = null
+        for (let i = 0; i < list.length; i++) {
+            if (value === list[i].value) {
+                container = i;
+                break;
+            }
+        }
+        
+        return container
+    }
 
+    toString() {
+        let textContainer = '';
+        let list = this.linkedList;
+        for (let i = 0; i < list.length; i++) {
+            if (i === list.length - 1) {
+                textContainer += `( ${list[i].value} ) -> null`;
+            } else {
+                textContainer += `( ${list[i].value} ) -> `
+            }
+        }
+
+        return textContainer;
+    }
 }
 
 class Node {
@@ -73,4 +96,4 @@ list.append('cat');
 list.append('watermelon')
 list.prepend('alister')
 list.append('great')
-console.log(list.at(0));
+console.log(list.toString());
