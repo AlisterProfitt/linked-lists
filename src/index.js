@@ -81,6 +81,20 @@ class LinkedList {
 
         return textContainer;
     }
+
+    insertAt(value, index) {
+        let list = this.linkedList;
+        const newNode = new Node(value);
+        list.splice(index, 0, newNode);
+        if (typeof list[index + 1] !== 'undefined') {
+            newNode.nextNode = list[index + 1];
+        }
+
+        if (typeof list[index - 1] !== 'undefined') {
+            const previousNode = list[index - 1];
+            previousNode.nextNode = newNode
+        }
+    }
 }
 
 class Node {
@@ -96,4 +110,6 @@ list.append('cat');
 list.append('watermelon')
 list.prepend('alister')
 list.append('great')
+list.insertAt('walter', 2)
+console.log(list.linkedList);
 console.log(list.toString());
