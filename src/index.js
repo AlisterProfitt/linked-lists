@@ -45,12 +45,14 @@ class LinkedList {
 
     contains(value) {
         let list = this.linkedList;
+        let boolean = false;
         for (let i = 0; i < list.length; i++) {
-            if (value === list[i]) {
-                return true;
+            if (value === list[i].value) {
+                boolean = true;
+                break
             }
-            return false;
         }
+        return boolean
     }
 }
 
@@ -71,4 +73,4 @@ list.append('cat');
 list.append('watermelon')
 list.prepend('alister')
 list.append('great')
-console.log(list.size());
+console.log(list.at(0));
