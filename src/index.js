@@ -19,6 +19,18 @@ class LinkedList {
         const newNode = new Node(value, list[0]);
         list.splice(0, 0, newNode);
     }
+
+    size() {
+        return this.linkedList.length;
+    }
+
+    head() {
+        return this.linkedList[0];
+    }
+
+    tail() {
+        return this.linkedList[this.linkedList.length - 1];
+    }
 }
 
 LinkedList.prototype.toString = function linkedListToString() {
@@ -38,4 +50,4 @@ list.append('cat');
 list.append('watermelon')
 list.prepend('alister')
 list.append('great')
-console.log(list.linkedList);
+console.log(list.size());
