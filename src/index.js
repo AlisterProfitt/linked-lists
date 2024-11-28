@@ -31,6 +31,27 @@ class LinkedList {
     tail() {
         return this.linkedList[this.linkedList.length - 1];
     }
+
+    at(index) {
+        return this.linkedList[index];
+    }
+
+    pop() {
+        let list = this.linkedList;
+        let length = list.length;
+        list.pop();
+        list[length - 1].nextNode = null;
+    }
+
+    contains(value) {
+        let list = this.linkedList;
+        for (let i = 0; i < list.length; i++) {
+            if (value === list[i]) {
+                return true;
+            }
+            return false;
+        }
+    }
 }
 
 LinkedList.prototype.toString = function linkedListToString() {
