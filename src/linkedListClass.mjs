@@ -124,6 +124,7 @@ class LinkedList {
     toString() {
         let currentNode = this.listHead;
         let stringContainer = '';
+        if (this.length === 0) return 'null';
         for (let i = 0; i < this.length; i++) {
             if (currentNode.nextNode === null) {
                 stringContainer += `( ${currentNode.value} ) -> null`
@@ -135,6 +136,41 @@ class LinkedList {
 
         return stringContainer;
     }
+
+    insertAt(value, index) {
+        if (index < 0 || index > this.length) {
+            console.log('Not a valid operation');
+            return;
+        }
+
+        let currentNode = this.listHead;
+        let previousNode = this.listHead;
+        let newNode = new Node(value);
+        for (let i = 0; i <= index; i++) {
+            if (i === index) {
+                if (index !== 0) {
+                    previousNode.nextNode = newNode;
+                    newNode.nextNode = currentNode;
+                } else {
+                    this.listHead = newNode;
+                    if (currentNode.value !== null) {
+                        newNode.nextNode = currentNode;
+                    }
+                }
+            } else {
+                previousNode = currentNode;
+                currentNode = currentNode.nextNode;
+            }
+        }
+        this.length++
+    }
+
+    // removeAt(index) {
+    //     let currentNode = this.listHead;
+    //     let previousNode = this.listHead;
+    //     console.log(currentNode === previousNode);
+    //     this.length--;
+    // }
 }
 
 export { LinkedList }

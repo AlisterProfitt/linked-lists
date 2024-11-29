@@ -5,9 +5,9 @@ list.append('dog')
 list.append('spider')
 list.append('spy')
 list.append('cat')
-list.prepend('lion')
 list.append('snake')
-list.prepend('lioness')
-list.prepend('lioness')
+list.prepend('cat')
 
-console.log(list.toString());
+list.insertAt('great whale', 0)
+list.prepend('cat')
+list.removeAt()
