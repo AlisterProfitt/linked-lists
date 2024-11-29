@@ -5,4 +5,5 @@ list.append('dog')
 list.append('spider')
 list.append('spy')
 list.append('cat')
+list.prepend('lion')
 console.log(list);

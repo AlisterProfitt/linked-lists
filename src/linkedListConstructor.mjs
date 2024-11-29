@@ -12,6 +12,7 @@ class LinkedList {
             this.length++;
             return
         }
+
         const newNode = new Node(value);
         let currentNode = this.head;
         while (currentNode.value !== null) {
@@ -21,6 +22,20 @@ class LinkedList {
             }
             currentNode = currentNode.nextNode;
         } 
+        this.length++;
+    }
+
+    prepend(value) {
+        if (this.head.value === null) {
+          this.head.value = value;
+          this.length++;
+          return;
+        }
+
+        const newNode = new Node(value);
+        const previousHead = this.head;
+        this.head = newNode;
+        newNode.nextNode = previousHead;
         this.length++;
     }
 }
