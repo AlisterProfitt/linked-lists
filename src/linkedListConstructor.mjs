@@ -2,33 +2,39 @@ import { Node } from "./nodeConstructor.mjs";
 
 class LinkedList {
     constructor() {
-        this.head = new Node();
-        this.tail = this.head;
+        this.headNode = new Node();
+        this.tailNode = this.headNode;
         this.length = 0;
     }
 
     append(value) {
         const newNode = new Node(value);
-        if (this.head.value === null) {
-            this.head = newNode;
+        if (this.headNode.value === null) {
+            this.headNode = newNode;
         } else {
-            this.tail.nextNode = newNode;
+            this.tailNode.nextNode = newNode;
         }
-        this.tail = newNode;
+        this.tailNode = newNode;
         this.length++;
     }
 
     prepend(value) {
         const newNode = new Node(value);
-        const previousHead = this.head;
-        this.head = newNode;
+        const previousHead = this.headNode;
+        this.headNode = newNode;
         if (previousHead.value !== null) {
             newNode.nextNode = previousHead;
         } else {
-            this.tail = newNode;
+            this.tailNode = newNode;
         }
         this.length++;
     }
+
+    size() {
+        return this.length;
+    }
+
+    
 }
 
 export { LinkedList }
