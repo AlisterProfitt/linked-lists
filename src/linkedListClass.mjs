@@ -93,6 +93,33 @@ class LinkedList {
             this.length--;
         }
     }
+
+    contains(value) {
+        let currentNode = this.listHead;
+        let boolean = false;
+        for (let i = 0; i < this.length; i++) {
+            if (currentNode.value === value) {
+                boolean = true;
+                break;
+            } else {
+                currentNode = currentNode.nextNode;
+            }
+        }
+        return boolean;
+    }
+
+    find(value) {
+        let currentNode = this.listHead;
+        let container = -1;
+        for (let i = 0; i < this.length; i++) {
+            if (currentNode.value === value) {
+                container = i;
+                break;
+            }
+            currentNode = currentNode.nextNode;
+        }
+        return container;
+    }
 }
 
 export { LinkedList }
