@@ -1,4 +1,4 @@
-import { Node } from "./nodeConstructor.mjs";
+import { Node } from "../nodeConstructor.mjs";
 
 class LinkedList {
   constructor() {
