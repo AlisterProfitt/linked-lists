@@ -49,6 +49,10 @@ class LinkedList {
 
     tail() {
         let currentNode = this.listHead;
+        if (currentNode.value === null) {
+            return currentNode;
+        }
+
         while (currentNode.value !== null) {
             if (currentNode.nextNode === null) {
                 return currentNode;
@@ -56,6 +60,10 @@ class LinkedList {
             currentNode = currentNode.nextNode;
         }
     }
+
+    // at(index) {
+    //     for (let i = 0; i < index; i++)
+    // }
 }
 
 export { LinkedList }
