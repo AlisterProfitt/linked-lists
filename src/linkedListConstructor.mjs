@@ -2,19 +2,19 @@ import { Node } from "./nodeConstructor.mjs";
 
 class LinkedList {
     constructor() {
-        this.head = new Node(null);
+        this.listHead = new Node(null);
         this.length = 0;
     }
 
     append(value) {
-        if (this.head.value === null) {
-            this.head.value = value;
+        if (this.listHead.value === null) {
+            this.listHead.value = value;
             this.length++;
             return
         }
 
         const newNode = new Node(value);
-        let currentNode = this.head;
+        let currentNode = this.listHead;
         while (currentNode.value !== null) {
             if (currentNode.nextNode === null) {
                 currentNode.nextNode = newNode;
@@ -26,15 +26,15 @@ class LinkedList {
     }
 
     prepend(value) {
-        if (this.head.value === null) {
-          this.head.value = value;
+        if (this.listHead.value === null) {
+          this.listHead.value = value;
           this.length++;
           return;
         }
 
         const newNode = new Node(value);
-        const previousHead = this.head;
-        this.head = newNode;
+        const previousHead = this.listHead;
+        this.listHead = newNode;
         newNode.nextNode = previousHead;
         this.length++;
     }
@@ -43,7 +43,9 @@ class LinkedList {
         return this.length;
     }
 
-    
+    head() {
+        return this.listHead;
+    }
 }
 
 export { LinkedList }
