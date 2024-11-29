@@ -38,7 +38,9 @@ class LinkedList {
         return this.headNode;
     }
 
-
+    tail() {
+        return this.tailNode;
+    }
 }
 
 export { LinkedList }
