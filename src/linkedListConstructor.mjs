@@ -44,7 +44,7 @@ class LinkedList {
 
     at(index) {
         if (index > this.length || index < 0) return null;
-        let currentNode = this.listHead;
+        let currentNode = this.headNode;
         for (let i = 0; i <= index; i++) {
             if (i === index) {
                 break;
@@ -54,6 +54,29 @@ class LinkedList {
         }
 
         return currentNode;
+    }
+
+    pop() {
+        if (this.headNode.value === null) return;
+        if (this.headNode.nextNode === this.tailNode) {
+            this.headNode.nextNode = null;
+            this.tailNode = this.headNode
+            this.length--;
+            return;
+        }
+        
+        let currentNode = this.headNode;
+        let previousNode = this.headNode;
+        for (let i = 0; i < this.length; i++) {
+                if (currentNode.nextNode !== null) {
+                    previousNode = currentNode;
+                    currentNode = currentNode.nextNode;
+                } else {
+                    previousNode.nextNode = currentNode.nextNode;
+                    this.tailNode = previousNode
+                }
+            }
+        this.length--;
     }
 }
 
