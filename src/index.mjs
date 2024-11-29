@@ -8,4 +8,14 @@ list.append('cat')
 list.prepend('lion')
 list.append('snake')
 
-console.log(list.at(1));
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+console.log(list.at(0));

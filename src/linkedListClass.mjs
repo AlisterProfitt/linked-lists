@@ -74,6 +74,25 @@ class LinkedList {
 
         return currentNode;
     }
+
+    pop() {
+        let currentNode = this.listHead;
+        let previousNode = this.listHead;
+        if (this.length === 1) {
+            this.listHead = new Node(null);
+            this.length--;
+        } else if (this.length > 1) {
+            for (let i = 0; i < this.length; i++) {
+                if (currentNode.nextNode !== null) {
+                    previousNode = currentNode;
+                    currentNode = currentNode.nextNode;
+                } else {
+                    previousNode.nextNode = currentNode.nextNode;
+                }
+            }
+            this.length--;
+        }
+    }
 }
 
 export { LinkedList }
