@@ -35,10 +35,10 @@ class LinkedList {
     }
 
     head() {
-        return this.head;
+        return this.headNode;
     }
 
-    
+
 }
 
 export { LinkedList }
