@@ -165,12 +165,35 @@ class LinkedList {
         this.length++
     }
 
-    // removeAt(index) {
-    //     let currentNode = this.listHead;
-    //     let previousNode = this.listHead;
-    //     console.log(currentNode === previousNode);
-    //     this.length--;
-    // }
+    removeAt(index) {
+        if (index < 0 || index > this.length) {
+            console.log('Not a valid operation');
+            return;
+        }
+
+        let currentNode = this.listHead;
+        let previousNode = this.listHead;
+        for (let i = 0; i <= index; i++) {
+            if (i === index) {
+                if (index !== 0) {
+                    previousNode.nextNode = currentNode.nextNode;
+                } else {
+                    if (currentNode.nextNode === null) {
+                        this.listHead = new Node(null)
+                    } else {
+                        this.listHead = this.listHead.nextNode;
+                    }
+                }
+            } else {
+                previousNode = currentNode;
+                currentNode = currentNode.nextNode;
+            }
+        }
+        
+        if (this.length !== 0) {
+            this.length--;
+        }
+    }
 }
 
 export { LinkedList }
