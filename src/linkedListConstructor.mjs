@@ -38,6 +38,12 @@ class LinkedList {
         newNode.nextNode = previousHead;
         this.length++;
     }
+
+    size() {
+        return this.length;
+    }
+
+    
 }
 
 export { LinkedList }
