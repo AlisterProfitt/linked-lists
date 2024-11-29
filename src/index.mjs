@@ -7,3 +7,5 @@ list.append('spy')
 list.append('cat')
 list.prepend('lion')
 list.append('snake')
+
+console.log(list.at(1));
