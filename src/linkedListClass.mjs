@@ -120,6 +120,21 @@ class LinkedList {
         }
         return container;
     }
+
+    toString() {
+        let currentNode = this.listHead;
+        let stringContainer = '';
+        for (let i = 0; i < this.length; i++) {
+            if (currentNode.nextNode === null) {
+                stringContainer += `( ${currentNode.value} ) -> null`
+            } else {
+                stringContainer += `( ${currentNode.value} ) -> `
+            }
+            currentNode = currentNode.nextNode;
+        }
+
+        return stringContainer;
+    }
 }
 
 export { LinkedList }

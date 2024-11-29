@@ -7,5 +7,7 @@ list.append('spy')
 list.append('cat')
 list.prepend('lion')
 list.append('snake')
+list.prepend('lioness')
+list.prepend('lioness')
 
-console.log(list.find('snake'));
+console.log(list.toString());
