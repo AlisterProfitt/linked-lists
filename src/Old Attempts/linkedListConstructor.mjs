@@ -100,8 +100,9 @@ class LinkedList {
             if (currentNode.value === value) {
                 container = i;
                 break;
+            } else {
+                currentNode = currentNode.nextNode;
             }
-            currentNode = currentNode.nextNode;
         }
         return container;
     }
